@@ -7,19 +7,36 @@
   <div id="main">
       <div id="iconImage">
             <img id='avatar' src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" height='250px' width='250px'>
-            
-            <a href='logout'><button id="logout" type="button" name="logout" >logout</button></a>
-
-            
 
 
-
-    
-
-
-
+            <%= session[:user_name]%>
+            <br>
+            <a href='logout'><button id="logout" type="button" name="logout" >logout</button></a> 
       </div>
-      <div id="pageContent">page goes here</div>
+      <div id="pageContent"> 
+      
+      <form id="Postbox" action="/social" method="post">
+          <textarea rows="1" cols="70" class="blog" name="title" type="text" placeholder="Title"></textarea><br>
+          <textarea rows="4" cols="70" class="blog" type="text" name="body" placeholder="What are you thinking..."></textarea><br>
+          <input class="blog" type="submit" value="post">
+        </form>
+
+        <%= session[:post_title]%> <br>
+        <%= session[:post_body]%>
+
+        
+        
+</div>
+
+
+
+
+</div>
+
+      
+      
+      
+      </div>
 
   </div>
   <div id="footing"></div>
