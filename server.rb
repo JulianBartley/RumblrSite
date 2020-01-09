@@ -3,8 +3,17 @@ require "sinatra"
 require "sinatra/flash"
 require "./models"
 
-set :database, adapter: 'postgresql', database: 'rumblr'
+configure :development do 
+  set :database, {adapter: 'postgressql', encoding: 'unicode', database: 'rumblr'}
+end
+
+configure :production do
+  set :database, {url:ENV['DATABASE_URL']}
+end
+
 enable :sessions
+
+
 
 class User < ActiveRecord::Base
 end
