@@ -8,8 +8,10 @@
       <div id="iconImage">
             <img id='avatar' src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" height='250px' width='250px'>
 
-
-            <%= session[:user_name]%>
+   
+            <center>
+            <h4 id='username'><%= session[:user_name]%></h4>
+            <p id='sub-name'> <%= session[:username]%> </p>
             <br>
             <a href='logout'><button id="logout" type="button" name="logout" >logout</button></a> 
       </div>
@@ -21,8 +23,10 @@
           <input class="blog" type="submit" value="post">
         </form>
 
-        <%= session[:post_title]%> <br>
-        <%= session[:post_body]%>
+        <center><h4><%= session[:post_title]%> <br></h4>
+        <%= session[:post_body]%><center>
+
+        
 
         
         

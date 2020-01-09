@@ -37,6 +37,8 @@ post '/login' do
     given_password = params[:password]
     if @user.password == given_password
         session[:user_id] = @user.id
+        session[:user_name] = @user.first_name
+        session[:username] = @user.username
         redirect '/social'
     end
 end
@@ -45,8 +47,27 @@ get '/social' do
   erb :social
 end
 
+
+post '/social' do 
+  @post = Post.new(title: params['title'], body: params['body'], user_id: session[:user_id])
+  if @post.valid?
+    session[:post_title] = @post.title
+    session[:post_body] = @post.body
+    @post.save
+    redirect "/social"
+  end
+end
+
+
+get "/feed" do 
+  erb :feed
+end
+
+
 get '/logout' do
   session.clear
   p 'User successfully logged out'
   redirect '/'
-end 
+end  
+
+
