@@ -157,9 +157,15 @@ main {
 
 
 
-form{
-    padding: 20% 25%;
+/* form{
+    padding:-1;
+    margin: 16px;
     color: white;
+} */
+
+#loginContent{
+  padding: 20% 25%;
+  color: white;
 }
 
 .loginPage{
@@ -178,6 +184,7 @@ form{
 
 #loginform{
   background-color: white;
+  padding: 20% 25%
 }
 
 #loginPage2:hover{
@@ -198,11 +205,47 @@ form{
   grid-area: banner;
   position: static;
   /* padding: 2%; */
-  background-color: rgb(246,53,44);
-  box-shadow: 0px 10px 5px 0px;
+  background-color: rgb(23,71,90);
+  /* box-shadow: 0px 10px 5px 0px; */
   border: 1px solid;
 }
 
+header{
+  display: grid;
+  grid-template-areas: 
+  "cloudyR nav nameRumblr";
+  /* ". nav ."; */
+  grid-row-gap: 1em;;
+}
+
+#cloudyR{
+  grid-area: cloudyR;
+  padding-left: 8%;
+}
+
+nav{
+  grid-area: nav;
+  padding-left: 42%;
+  padding-top: 24%;
+  word-spacing: 30px;
+  font-size: 2em;
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
+  text-decoration:none;
+}
+
+
+
+
+#nameRumblr{
+  grid-area: nameRumblr;
+  margin: 11% 0 0% 47%;
+  font-size: 5em;
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 4.4px;
+}
 
 #main{
   grid-area: main;
@@ -219,8 +262,9 @@ form{
   grid-area: iconImage;
   /* background: blue; */
   box-sizing: border-box;
+  background-color: lightgray;
   height: 80vh;
-  width: 30vw;
+  width: 20vw;
 }
 
 #username{
@@ -246,9 +290,65 @@ form{
   grid-area: pageContent;
   height: 110vh;
   width: 70vw;
-  background: pink;
+  background: white;
+  display: grid;
+  grid-template-areas: 
+  "postbox"
+  "enteredPosts";
+}
+
+#Postbox{
+  grid-area: postbox;
+  margin: 16px;
+}
+
+#enteredPosts{
+  margin: 7.8%;
+  grid-area: enteredPosts;
   overflow-y: scroll;
 }
+
+#postTitle{
+  font-size: 3em;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+#postBody{
+  margin-top: -5%;
+  font-size: 2em;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+textarea {
+  width: 100%;
+  /* height: 300%; */
+  padding: 8px 10px;
+  font-size: 3em;
+  box-sizing: border-box;
+  border: 2px solid rgb(22, 150, 224);
+  border-color:  rgb(22, 150, 224);
+  border-radius: 0px 10px 10px 10px;
+  resize: none;
+}
+
+.blog{
+  font-size: 2em;
+  border-radius: 10px 10px 0px 0px;
+  border: 2px solid rgb(22,150,224);
+  box-sizing: border-box;
+  width: 50%
+}
+
+.blog-button{
+  font-size: 1.5em;
+  border-radius: 10%;
+  padding: 3.5%;
+  margin-left: 82.8%; 
+  color: white;
+  background-color: rgba(4, 187, 248, 0.836);
+}
+
+
 
 #footing{
   grid-area: footing;

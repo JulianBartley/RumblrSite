@@ -4,7 +4,7 @@ require "sinatra/flash"
 require "./models"
 
 configure :development do 
-  set :database, {adapter: 'postgressql', encoding: 'unicode', database: 'rumblr'}
+  set :database, {adapter: 'postgresql', encoding: 'unicode', database: 'rumblr'}
 end
 
 configure :production do
@@ -60,17 +60,22 @@ end
 post '/social' do 
   @post = Post.new(title: params['title'], body: params['body'], user_id: session[:user_id])
   if @post.valid?
+    session[:post_userid] = @post.user
     session[:post_title] = @post.title
     session[:post_body] = @post.body
+    # @posts = Post.user_id
     @post.save
     redirect "/social"
   end
 end
 
 
-get "/feed" do 
+
+get "/feed" do
+  @posts = Post.all
   erb :feed
 end
+
 
 
 get '/logout' do
