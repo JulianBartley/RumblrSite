@@ -1,0 +1,17 @@
+
+ <% if !session[:user_id] %>
+    
+  
+    <% else %>
+
+
+<% if session[:user_id] %>
+
+    <h10 >The Rumbling</h10>
+    <% @posts.each do |post| %>
+    <h4 id = postTitle > <%= post.title %></h4>
+    <p id = enteredPosts> <%= post.body %></p>
+    
+    <%end%>
+    <%end%>
+    <%end%>

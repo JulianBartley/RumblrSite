@@ -9,6 +9,17 @@
   </head>
   <body>
     <%=yield%>
+  <% if !session[:user_id] %>
+        <a href="/login"> </a>
+      <% else %>
+
+    <% if session[:user_id] %>
+       <a href="/social"> Social</a>    
+        <a href="/feed">Feed </a>
+
+      <%end%>
+    <%end%>
+    
 
 
 

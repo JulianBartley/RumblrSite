@@ -1,14 +1,37 @@
 
+ <% if !session[:user_id] %>
+   
+   <% else %>
+
+
+<% if session[:user_id] %>
+
+
+
+
+
 <div class="SocialPageLayout">
   <div id="banner">
-    <img src="https://img.icons8.com/clouds/100/000000/r.png" height="200px" width="200px">
-    
+    <header>
+      <div id = "cloudyR">
+        <img src="https://img.icons8.com/clouds/100/000000/r.png" height="200px" width="200px">
+      </div>
+        <div id = "nameRumblr">
+          <h8>Rumblr</h8>
+        </div>
+        <nav>
+          <a href="/feed">feed</a>
+          Profile
+        </nav>
+    </header>
   </div>
+
+
+
+
   <div id="main">
       <div id="iconImage">
             <img id='avatar' src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" height='250px' width='250px'>
-
-   
             <center>
             <h4 id='username'><%= session[:user_name]%></h4>
             <p id='sub-name'> <%= session[:username]%> </p>
@@ -16,15 +39,20 @@
             <a href='logout'><button id="logout" type="button" name="logout" >logout</button></a> 
       </div>
       <div id="pageContent"> 
-      
-      <form id="Postbox" action="/social" method="post">
-          <textarea rows="1" cols="70" class="blog" name="title" type="text" placeholder="Title"></textarea><br>
-          <textarea rows="4" cols="70" class="blog" type="text" name="body" placeholder="What are you thinking..."></textarea><br>
-          <input class="blog" type="submit" value="post">
-        </form>
+         <form id="Postbox" action="/social" method="post">
+            <input rows="1" cols="70" class="blog" name="title" type="text" placeholder="Title"></input><br>
+            <textarea rows="4" cols="70" class="blog-body" type="text" name="body" placeholder="What's Rumbling, <%= session[:user_name]%> ?"></textarea><br>
+            <input class="blog-button" type="submit" value="Rumble">
+           </form>
+      <div id = enteredPosts>
+            <h4 id = postTitle><%= session[:post_title]%> </h4>
+            <p id = postBody><%= session[:post_body]%></p>
+       
+     
+      </div>
 
-        <center><h4><%= session[:post_title]%> <br></h4>
-        <%= session[:post_body]%><center>
+    
+        
 
         
 
@@ -46,3 +74,7 @@
   <div id="footing"></div>
 
 </div>
+
+<%end%>
+
+<%end%>
