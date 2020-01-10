@@ -1,17 +1,33 @@
 
+
  <% if !session[:user_id] %>
-    
-  
-    <% else %>
+   
+   <% else %>
 
 
 <% if session[:user_id] %>
 
-    <h10 >The Rumbling</h10>
+
+
+
+<div class = "Feed">
+    <div id="feedBanner">
+        <div id="feedName">
+        <h10 id="theRumbling">The Rumbling</h10>
+        </div>
+    </div>
+   <div> 
+<div class = feedPosts>
     <% @posts.each do |post| %>
-    <h4 id = postTitle > <%= post.title %></h4>
-    <p id = enteredPosts> <%= post.body %></p>
-    
+        <h4 id = postTitle > <%= post.title %></h4>
+        <p id = enteredPosts> <%= post.body %></p>
     <%end%>
-    <%end%>
-    <%end%>
+    </div>
+    <div>
+
+
+</div>
+
+<%end%>
+
+<%end%>

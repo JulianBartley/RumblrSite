@@ -228,11 +228,17 @@ nav{
   padding-left: 42%;
   padding-top: 24%;
   word-spacing: 30px;
-  font-size: 2em;
+  font-size: 3em;
   font-family: 'Nunito Sans', sans-serif;
+  text-decoration: none;
   color: white;
-  text-decoration:none;
 }
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
 
 
 
@@ -277,7 +283,7 @@ nav{
   font-family: 'Bree Serif', serif;
   font-size: 2.9em;
   margin: -19px;
-  color: lightblue;
+  color: purple;
 }
 
 #avatar{
@@ -303,19 +309,26 @@ nav{
 }
 
 #enteredPosts{
-  margin: 7.8%;
+  padding-bottom: 7.8%;
   grid-area: enteredPosts;
   overflow-y: scroll;
+  font-size: 1.2em;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-left: 20%;
 }
 
+.Feed{
+  overflow-y: scroll;
+}
 #postTitle{
-  font-size: 3em;
+  font-size: 1.5em;
   font-family: 'Nunito Sans', sans-serif;
+  margin-left: 20%;
 }
 
 #postBody{
   margin-top: -5%;
-  font-size: 2em;
+  font-size: 3em;
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -348,9 +361,29 @@ textarea {
   background-color: rgba(4, 187, 248, 0.836);
 }
 
+#feedLink[
+  font-size: 1.9em;
+]
+
 
 
 #footing{
   grid-area: footing;
 }
 
+#feedBanner{
+  height: 20vh;
+  width: 100vw;
+  background-color: rgb(23,71,90);
+  color: white;
+}
+
+#theRumbling{
+  font-size: 5em;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+#feedName{
+  padding-top: 2.5%;
+  padding-left: 2.5%;
+}
